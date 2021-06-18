@@ -1,0 +1,12 @@
+ja:
+  headline: "本一覧"
+  title: "タイトル"
+  memo: "メモ"
+  author: "著者"
+  picture: "写真"
+  show: "詳細"
+  edit: "編集"
+  destroy: "削除"
+  new_book: "新しい本を登録"
+  back: "戻る"
+  editing_book: "本を編集"
