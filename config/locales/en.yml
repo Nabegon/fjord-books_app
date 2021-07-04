@@ -31,14 +31,11 @@
 
 en:
   headline: "Books"
-  title: "Title"
-  memo: "Memo"
-  author: "Author"
-  picture: "Picture"
   show: "Show"
   edit: "Edit"
   destroy: "Destroy"
   back: "Back"
   new_book: "New book"
   confirm: "Are you sure?"
-  tab: "BooksApp"
+  tab: "BooksApp" 
+  create: "create"

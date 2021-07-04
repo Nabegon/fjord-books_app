@@ -1,9 +1,5 @@
-ja:
+ja: 
   headline: "本一覧"
-  title: "タイトル"
-  memo: "メモ"
-  author: "著者"
-  picture: "写真"
   show: "詳細"
   edit: "編集"
   destroy: "削除"
