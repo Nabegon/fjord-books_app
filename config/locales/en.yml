@@ -38,4 +38,6 @@ en:
   new_book: "New book"
   confirm: "Are you sure?"
   tab: "BooksApp" 
-  create: "create"
+  create: "created"
+  update: "updated"
+  delete: "destroyed"

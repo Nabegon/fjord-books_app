@@ -1,5 +1,4 @@
 ja:
   books_controller:
-    template: "[%{book_title}を%{action}]に成功しました。"
-    destroy: "%{book_title}を削除しました。"
+    template: "%{book_title}の%{action}に成功しました。"
 
