@@ -38,7 +38,6 @@ end
 group :development do
   gem 'faker'
   gem 'i18n_generators'
-  gem 'i18n_generators'
   gem 'letter_opener_web', '~> 1.0'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
