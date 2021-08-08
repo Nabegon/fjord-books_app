@@ -1,11 +1,28 @@
-<h1><%= t('title.detail') %></h1>
-<h3><%= t('user.name') %></h3>
-<%= @user.name %>
-<h3><%= t('user.zip') %></h3>
-<%= @user.zip %>
-<h3><%= t('user.address') %></h3>
-<%= @user.address %>
-<h3><%= t('user.email') %></h3>
-<%= @user.email %>
-<h3><%= t('user.profile') %></h3>
-<%= @user.profile%>
+<h2><%= t('views.common.show') %></h2>
+
+<div>
+  <strong><%= User.human_attribute_name(:name) %>:</strong>
+  <%= @user.name %>
+</div>
+
+<div>
+  <strong><%= User.human_attribute_name(:zip) %>:</strong>
+  <%= @user.zip %>
+</div>
+
+<div>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= @user.address %>
+</div>
+
+<div>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @user.email %>
+</div>
+
+<div>
+  <strong><%= User.human_attribute_name(:profile) %>:</strong>
+  <%= @user.profile %>
+</div>
+
+<%= link_to t('views.common.back'), users_path %>

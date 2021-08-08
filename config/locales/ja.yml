@@ -205,3 +205,25 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  views:
+    common:
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+      new: 新規作成
+      back: 戻る
+      user_list: ユーザー一覧
+      delete_confirm: よろしいですか？
+      title_new: "%{name}の新規作成"
+      title_edit: "%{name}の編集"
+    pagination:
+      first: '最初'
+      last: '最後'
+      previous: '前'
+      next: '次'
+      truncate: '...'
+  controllers:
+    common:
+      notice_create: "%{name}が作成されました。"
+      notice_update: "%{name}が更新されました。"
+      notice_destroy: "%{name}が削除されました。"
