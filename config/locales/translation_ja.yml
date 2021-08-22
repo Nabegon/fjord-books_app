@@ -11,6 +11,7 @@ ja:
         picture: 画像  #g
         title: 題名  #g
       user:
+        avatar: アイコン #add
         name: 氏名
         postal_code: 郵便番号
         address: 住所
