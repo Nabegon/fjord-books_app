@@ -11,7 +11,7 @@
       <% unless @users.nil? %>
         <div class="user_avatars">
           <% @users.each do |user| %>
-            <%= link_to image_tag(user, size: 30), user %>
+            <%= link_to image_tag(user.avatar, size: 30), user %>
           <% end %>
         </div>
       <% end %>
