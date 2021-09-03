@@ -9,7 +9,7 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
-    user = Relationship.find(params[:id]).followed
+    user = current_user.active_relationships.find(params[:id]).followed
     current_user.unfollow(user)
     flash[:notice] = 'アンフォローしました'
     redirect_to user
