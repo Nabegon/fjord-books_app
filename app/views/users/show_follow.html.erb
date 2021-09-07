@@ -1,0 +1,20 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= image_tag @user.avatar, size: "50x50" if @user.avatar.attached? %>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      </section>
+    <section class="stats">
+      <%= render 'stats' %>
+      <% unless @users.nil? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to image_tag(user.avatar, size: 30), user %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+</div>
