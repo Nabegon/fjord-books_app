@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -14,7 +16,7 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -34,8 +36,14 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dummy_text_jp'
+  gem 'faker'
+  gem 'i18n_generators'
+  gem 'letter_opener_web'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
+  gem 'rubocop-fjord', require: false
+  gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
 end
@@ -50,3 +58,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'carrierwave'
+gem 'devise'
+gem 'devise-i18n'
+gem 'kaminari'
+
+gem 'image_processing', '~> 1.2'
