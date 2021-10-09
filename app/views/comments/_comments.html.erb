@@ -1,0 +1,12 @@
+<p>
+  <strong><%= Comment.model_name.human %>: </strong>
+  <% commentable.comments.each do |comment| %>
+    <br>
+    <%= comment.body %>
+    <%= User.find(comment.user_id).name %>
+    <%= comment.created_at %>
+    <% if current_user.id == comment.user_id %>
+      <td><%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+    <% end %>
+  <% end %>
+</p>

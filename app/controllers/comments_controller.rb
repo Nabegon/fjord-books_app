@@ -9,8 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save!
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      flash.now[:alert] = 'コメントに失敗しました'
-      redirect_to polymorphic_url([@commentable])
+      redirect_to polymorphic_url([@commentable]), notice: t('controllers.common.notice_error', name: Comment.model_name.human)
     end
   end
 
