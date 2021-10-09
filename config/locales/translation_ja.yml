@@ -22,4 +22,6 @@ ja:
         title: タイトル
         content: 本文
       comment:
-        body: コメント内容
+        body: 内容
+        name: 氏名
+        created_at: 投稿日時 
