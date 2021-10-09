@@ -14,7 +14,7 @@
         <tr>
           <td><%= comment.body %></td>
           <td><%= User.find(comment.user_id).name %></td>
-          <td><%= comment.created_at %></td>
+          <td><%= comment.created_at.to_s(:datetime_jp) %></td>
           <% if current_user.id == comment.user_id %>
             <td><%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
           <% end %>
