@@ -3,18 +3,19 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
+  setup do
+    @target_user = User.new(email: 'target@example.com', password: '666666')
+    @non_target_user = User.new(email: 'iamnottarget@example.com', password: '555555')
+    @report = Report.create!(user: @target_user, title: 'test', content: 'test', created_at: Date.new(2020, 10, 10))
+  end
+  
   test 'editable' do
-    target_user = User.create!(email: 'target@example.com', password: '666666')
-    no_target_user = User.create!(email: 'iamnottarget@example.com', password: '555555')
-
-    post = Report.new(user_id: target_user.id, title: 'test', content: 'test')
-    assert post.editable?(target_user)
-    assert_not post.editable?(no_target_user)
+    assert @report.editable?(@target_user)
+    assert_not @report.editable?(@non_target_user)
   end
 
   test 'created_on' do
-    user = User.create!(email: 'target@example.com', password: '666666')
-    post = Report.create!(user_id: user.id, title: 'test', content: 'test')
-    assert post.created_on == (Date.current)
+    assert_equal @report.created_on, Date.new(2020, 10, 10)
+    assert_not_equal @report.created_on, Date.new(2010, 11, 11)
   end
 end
