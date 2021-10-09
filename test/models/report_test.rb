@@ -6,7 +6,7 @@ class ReportTest < ActiveSupport::TestCase
   setup do
     @target_user = User.new(email: 'target@example.com', password: '666666')
     @non_target_user = User.new(email: 'iamnottarget@example.com', password: '555555')
-    @report = Report.create!(user: @target_user, title: 'test', content: 'test', created_at: Date.new(2020, 10, 10))
+    @report = Report.new(user: @target_user, title: 'test', content: 'test', created_at: Date.new(2020, 10, 10))
   end
   
   test 'editable' do
