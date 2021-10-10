@@ -16,26 +16,27 @@ class UserTest < ActiveSupport::TestCase
   test 'follow' do
     me = User.create!(email: 'me@example.com', password: 'aaa666')
     she = User.create!(email: 'she@example.com', password: 'bbb666')
-
+    
+    assert_nil Relationship.find_by(following_id: she.id, follower_id: me.id)
     me.follow(she)
-    assert me.following?(she)
+    assert Relationship.find_by(following_id: she.id, follower_id: me.id)
   end
 
   test 'unfollow' do
     me = User.create!(email: 'me@example.com', password: 'aaa666')
     she = User.create!(email: 'she@example.com', password: 'bbb666')
 
-    me.follow(she)
-    assert me.following?(she)
+    Relationship.create!(following_id: she.id, follower_id: me.id)
+    assert Relationship.find_by(following_id: she.id, follower_id: me.id)
     me.unfollow(she)
-    assert_not me.following?(she)
+    assert_nil Relationship.find_by(following_id: she.id, follower_id: me.id)
   end
 
   test 'following?' do
     me = User.create!(email: 'me@example.com', password: 'aaa666')
     she = User.create!(email: 'she@example.com', password: 'bbb666')
 
-    me.follow(she)
+    Relationship.create!(following_id: she.id, follower_id: me.id)
     assert me.following?(she)
   end
 
@@ -43,7 +44,7 @@ class UserTest < ActiveSupport::TestCase
     me = User.create!(email: 'me@example.com', password: 'aaa666')
     she = User.create!(email: 'she@example.com', password: 'bbb666')
 
-    me.follow(she)
+    Relationship.create!(following_id: she.id, follower_id: me.id)
     assert she.followed_by?(me)
   end
 end
