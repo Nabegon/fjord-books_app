@@ -5,12 +5,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.new comment_params
-    @comment.user_id = current_user.id
-    if @comment.save!
-      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
-    else
-      redirect_to polymorphic_url([@commentable]), notice: t('controllers.common.notice_error', name: Comment.model_name.human)
-    end
+    @comment = current_user
+    @comment.save!
+    redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
   end
 
   def destroy
