@@ -1,0 +1,5 @@
+<%= form_for [commentable, Comment.new] do |f| %>
+  <%= f.text_area :body, required: true %>
+  <br>
+  <%= f.submit %>
+<% end %>
